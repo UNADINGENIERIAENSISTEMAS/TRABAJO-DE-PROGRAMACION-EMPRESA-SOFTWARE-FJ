@@ -1,0 +1,91 @@
+=================================================================
+SISTEMA INTEGRAL DE GESTIÓN - SOFTWARE FJ
+=================================================================
+
+PRUEBA 1: Registrar cliente válido
+RESULTADO: Cliente Laura Gómez | Documento: 12345678
+Fin de la prueba.
+
+PRUEBA 2: Intentar registrar correo inválido
+ERROR CONTROLADO: El correo electrónico no tiene un formato válido.
+Fin de la prueba.
+
+PRUEBA 3: Intentar registrar documento duplicado
+ERROR CONTROLADO: Ya existe un cliente con ese documento o identificador.
+Fin de la prueba.
+
+PRUEBA 4: Buscar cliente existente
+RESULTADO: Cliente Laura Gómez | Documento: 12345678
+Fin de la prueba.
+
+PRUEBA 5: Buscar cliente inexistente
+ERROR CONTROLADO: No existe el cliente con documento 99999999.
+Fin de la prueba.
+
+PRUEBA 6: Agregar servicio de sala
+RESULTADO: <servicio.ReservaSala object at 0x7fb761583320>
+Fin de la prueba.
+
+PRUEBA 7: Agregar alquiler de equipos
+RESULTADO: <servicio.AlquilerEquipo object at 0x7fb7615834a0>
+Fin de la prueba.
+
+PRUEBA 8: Agregar asesoría especializada
+RESULTADO: <servicio.AsesoriaEspecializada object at 0x7fb761583620>
+Fin de la prueba.
+
+PRUEBA 9: Buscar servicio inexistente
+ERROR CONTROLADO: No existe el servicio S999.
+Fin de la prueba.
+
+PRUEBA 10: Crear reserva válida
+RESULTADO: Reserva R001 | Cliente: Laura Gómez | Servicio: Sala Ejecutiva | Estado: PENDIENTE
+Fin de la prueba.
+
+PRUEBA 11: Confirmar reserva
+RESULTADO: CONFIRMADA
+Fin de la prueba.
+
+PRUEBA 12: Procesar reserva con impuesto y descuento
+RESULTADO: $107,100.00
+Fin de la prueba.
+
+PRUEBA 13: Intentar procesar nuevamente una reserva procesada
+ERROR CONTROLADO: Solo se pueden procesar reservas confirmadas.
+Fin de la prueba.
+
+PRUEBA 14: Intentar crear reserva para servicio no disponible
+ERROR CONTROLADO: No se puede reservar un servicio no disponible.
+Fin de la prueba.
+
+PRUEBA 15: Crear y cancelar una reserva pendiente
+RESULTADO: CANCELADA
+Fin de la prueba.
+
+PRUEBA 16: Consultar reserva inexistente
+ERROR CONTROLADO: No existe la reserva R999.
+Fin de la prueba.
+
+PRUEBA 17: Validar capacidad superior a la permitida
+ERROR CONTROLADO: La cantidad de personas debe estar entre 1 y 12.
+Fin de la prueba.
+
+=================================================================
+RESUMEN
+Clientes registrados: 1
+Servicios registrados: 3
+Reservas creadas: 2
+Los eventos y errores se registran en logs/sistema.log
+=================================================================
+
+ERRORES:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
